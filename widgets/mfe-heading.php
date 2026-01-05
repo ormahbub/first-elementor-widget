@@ -6,34 +6,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 
-class MFE_Hello_Widget extends Widget_Base {
+class MFE_Heading extends Widget_Base {
 
     /**
      * Widget unique name
      */
     public function get_name() {
-        return 'mfe_hello';
+        return 'mfe_heading';
     }
 
     /**
      * Widget title (shown in Elementor panel)
      */
     public function get_title() {
-        return __( 'Hello Widget', 'mfe' );
+        return __( 'MFE Heading', 'mfe' );
     }
 
     /**
      * Widget icon
      */
     public function get_icon() {
-        return 'eicon-code';
+        return 'eicon-editor-h2';
     }
 
     /**
      * Widget category
      */
     public function get_categories() {
-        return [ 'basic' ];
+        return [ 'mfe-widgets' ];
     }
 
     /**
@@ -68,6 +68,6 @@ class MFE_Hello_Widget extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        echo '<h2 class="mfe-title">' . esc_html( $settings['text'] ) . '</h2>';
+        echo '<h2 class="mfe-heading">' . esc_html( $settings['text'] ) . '</h2>';
     }
 }
